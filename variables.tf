@@ -5,3 +5,7 @@ variable "vsphere_instance_admin_password" {
 variable "vsphere_cluster" {
   type = string
 }
+
+variable "vsphere_datacenter" {
+  type = string
+}
