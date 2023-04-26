@@ -9,3 +9,15 @@ variable "vsphere_cluster" {
 variable "vsphere_datacenter" {
   type = string
 }
+
+variable "vsphere_server" {
+  type = string
+}
+
+variable "vsphere_user_password" {
+  type = string
+}
+
+variable "vsphere_user" {
+  type = string
+}
