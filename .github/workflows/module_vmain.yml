@@ -1,7 +1,7 @@
-name: F5XC VMWare vSphere Cloud CE module vmain
+name: F5XC VMWare Cloud CE module vmain
 on: workflow_dispatch
 jobs:
-  vmware-vsphere-cloud-ce-module-validate:
+  vmware-cloud-ce-module-validate:
     runs-on: ubuntu-latest
     steps:
       - run: echo "The job was automatically triggered by a ${{github.event_name}} event."
@@ -47,9 +47,9 @@ jobs:
       - name: Terraform Validate
         id: validate
         run: terraform validate -no-color
-  vmware-vsphere-cloud-ce-module-plan:
+  vmware-cloud-ce-module-plan:
     runs-on: ubuntu-latest
-    needs: [vmware-vsphere-cloud-ce-module-validate]
+    needs: [vmware-cloud-ce-module-validate]
     steps:
       - run: echo "The job was automatically triggered by a ${{github.event_name}} event."
       - run: echo "This job is now running on a ${{ runner.os }} server hosted by GitHub."
@@ -111,9 +111,9 @@ jobs:
         run: |
           rm main.tf
       - run: echo "This job's status is ${{ job.status }}."
-  vmware-vsphere-cloud-ce-module-apply:
+  vmware-cloud-ce-module-apply:
     runs-on: ubuntu-latest
-    needs: [vmware-vsphere-cloud-ce-module-plan]
+    needs: [vmware-cloud-ce-module-plan]
     steps:
       - run: echo "The job was automatically triggered by a ${{github.event_name}} event."
       - run: echo "This job is now running on a ${{ runner.os }} server hosted by GitHub."
@@ -175,9 +175,9 @@ jobs:
         run: |
           rm main.tf
       - run: echo "This job's status is ${{ job.status }}."
-  vmware-vsphere-cloud-ce-module-destroy:
+  vmware-cloud-ce-module-destroy:
     runs-on: ubuntu-latest
-    needs: [vmware-vsphere-cloud-ce-module-apply]
+    needs: [vmware-cloud-ce-module-apply]
     steps:
       - run: echo "The job was automatically triggered by a ${{github.event_name}} event."
       - run: echo "This job is now running on a ${{ runner.os }} server hosted by GitHub."
