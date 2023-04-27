@@ -13,7 +13,7 @@ Terraform to create F5XC VMWare vSphere cloud CE
 - Initialize with `terraform init`
 - Apply with `terraform apply -auto-approve` or destroy with `terraform destroy -auto-approve`
 
-## VMWare vSphere Cloud CE Single Node Single NIC module usage example
+## vSphere Cloud CE Single Node Single NIC module usage example
 
 ````hcl
 variable "project_prefix" {
@@ -95,7 +95,7 @@ output "vsphere_single_node_single_nic" {
 }
 ````
 
-## VMWare vSphere Cloud CE Multi Node Single NIC module usage example
+## vSphere Cloud CE Multi Node Single NIC module usage example
 
 ````hcl
 variable "project_prefix" {
